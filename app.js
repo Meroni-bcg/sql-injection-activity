@@ -18,3 +18,9 @@ db.serialize(function () {
 app.get('/', function (req, res) {
     res.sendFile('index.html');
 });
+
+app.post('/login', function (req, res) {
+	var username = req.body.username;
+	var password = req.body.password;
+	var query = "SELECT title FROM user where username = '" + username + "' and password = '" + password + "'";
+});
